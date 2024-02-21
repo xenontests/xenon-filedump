@@ -1,7 +1,8 @@
 {
-  "version": 2,
-  "builds": [{
-    "src": "./path/to/video",
-    "useNextTypescriptConfig": false
-  }],
-  "routes": []
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/video/video.html"
+        }
+    ]
+}
