@@ -78,25 +78,18 @@
         </li>
     </ul>
     <script>
-        // Get a reference to the search box and file list
         const searchBox = document.getElementById('search-box');
         const fileList = document.getElementById('file-list');
 
-        // Add an event listener to the search box
         searchBox.addEventListener('input', () => {
-            // Get the search term
             const searchTerm = searchBox.value.toLowerCase();
 
-            // Loop through each file in the file list
             for (const file of fileList.children) {
-                // Get the file name
                 const fileName = file.textContent.trim().toLowerCase();
 
-                // If the file name doesn't match the search term, hide it
                 if (!fileName.includes(searchTerm)) {
                     file.style.display = 'none';
                 } else {
-                    // Otherwise, show it file.style.display = 'list-item'; } } }); 
                 </script>
     </body>
 </html>
