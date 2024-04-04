@@ -1,2 +1,4 @@
 # Xenon File Dump v2
-[![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repositoryurl=https://github.com/xenontests/xenon-filedump.git)
+Feel free to fork this and do whatever you want
+[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/xenontests/xenon-filedump)
+
