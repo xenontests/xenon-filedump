@@ -7,34 +7,62 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
     <style>
-        *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-    min-height:100vh;
-    display:grid;
-    place-items:center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+        }
 
-.download-btn{
-    background-color: DodgerBlue;
-    color: white;
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    text-decoration: none;
-    border-radius:5px;
-}
+        #search-box {
+            width: 500px;
+            height: 48px;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
 
-.download-btn:hover {
-    background-color: RoyalBlue;
-  }
+        #search-box:focus {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            background-color: RoyalBlue;
+        }
+
+        #file-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        #file-list li {
+            margin-bottom: 1rem;
+        }
     </style>
+</head>
 <body>
     <input type="text" id="search-box" placeholder="Search for a file...">
     <ul id="file-list">
@@ -68,12 +96,7 @@ body{
                 if (!fileName.includes(searchTerm)) {
                     file.style.display = 'none';
                 } else {
-                    // Otherwise, show it
-                    file.style.display = 'list-item';
-                }
-            }
-        });
-    </script>
-</body>
+                    // Otherwise, show it file.style.display = 'list-item'; } } }); 
+                </script>
+    </body>
 </html>
-
