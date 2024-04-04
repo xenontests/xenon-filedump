@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>File Search</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -65,6 +65,11 @@
 </head>
 <body>
     <input type="text" id="search-box" placeholder="Search for a file...">
+    <select id="file-type-select">
+        <option value="">All Files</option>
+        <option value="image">Images</option>
+        <option value="mcaddon">MC Addons</option>
+    </select>
     <ul id="file-list">
         <li>
             <a href="./folder/files/images/code.png" download='image' class="download-btn">code.png
@@ -79,17 +84,51 @@
     </ul>
     <script>
         const searchBox = document.getElementById('search-box');
+        const fileTypeSelect = document.getElementById('file-type-select');
         const fileList = document.getElementById('file-list');
 
+        // Populate the file list
+        const files = [
+            { name: 'code.png', type: 'image', url: './folder/files/images/code.png' },
+            { name: 'heavy machine vehicles.mcaddon', type: 'mcaddon', url: './folder/files/mcaddons/heavy machine vehicles.mcaddon' },
+            // Add more files here
+        ];
+
+        files.forEach(file => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = file.url;
+            a.download = file.type;
+            a.textContent = file.name;
+            a.classList.add('download-btn');
+            a.innerHTML += ' <i class="fa fa-download"></i>';
+            li.appendChild(a);
+            fileList.appendChild(li);
+        });
+
+        // Handle input and select changes
         searchBox.addEventListener('input', () => {
             const searchTerm = searchBox.value.toLowerCase();
+            filterFiles(searchTerm, fileTypeSelect.value);
+        });
 
+        fileTypeSelect.addEventListener('change', () => {
+            const fileType = fileTypeSelect.value;
+            filterFiles(searchBox.value.toLowerCase(), fileType);
+        });
+
+        function filterFiles(searchTerm, fileType) {
             for (const file of fileList.children) {
                 const fileName = file.textContent.trim().toLowerCase();
+                const fileTypeMatch = fileType? file.querySelector('a').download === fileType : true;
 
-                if (!fileName.includes(searchTerm)) {
+                if (!fileName.includes(searchTerm) ||!fileTypeMatch) {
                     file.style.display = 'none';
                 } else {
-                </script>
-    </body>
+                    file.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</body>
 </html>
