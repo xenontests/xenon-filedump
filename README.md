@@ -1,5 +1,5 @@
 # Xenon File Dump v1
-Feel free to fork this and do whatever you want
+This is an open-source file uploading website. If you want to fork this and add your own files, follow this tutorial:
 
 
 
