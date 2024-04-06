@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Add some global styles */
         * {
             margin: 0;
             padding: 0;
@@ -23,15 +22,14 @@
             background-color: #000000;
         }
 
-        /* Style the search container */
         #search-container {
             display: flex;
             align-items: center;
             position: relative;
             width: 500px;
+            min-height: 48px; 
         }
 
-        /* Style the search box */
         #search-box {
             width: 80%;
             height: 48px;
@@ -45,14 +43,17 @@
             background-color: #000000;
             color: #39ff14;
         }
+        
+        #search-box::placeholder { 
+            color: #39ff14;
+        }
 
         #search-box:focus {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Style the file type select */
         #file-type-select {
-            width: 200px; /* Set a fixed width for the dropdown menu */
+            width: 200px; 
             height: 48px;
             padding: 12px 10px;
             font-size: 18px;
@@ -69,7 +70,6 @@
             color: #39ff14;
         }
 
-        /* Style the download button */
        .download-btn {
             background-color: #39ff14; 
             color: black;
@@ -88,10 +88,9 @@
         }
 
        .download-btn:hover {
-            background-color:  #023020;
+            background-color:  #008000;
         }
 
-        /* Style the file list */
         #file-list {
             list-style: none;
             margin-top: 2rem;
@@ -130,11 +129,11 @@
         const fileTypeSelect = document.getElementById('file-type-select');
         const fileList = document.getElementById('file-list');
 
-        // Populate the file list
         const files = [
             { name: 'Test image', type: 'image', url: './folder/files/images/code.png' },
             { name: 'Machine Vehicles Minecraft Addon', type: 'mcaddon', url: './folder/files/mcaddons/heavy machine vehicles.mcaddon' },
             { name: 'World Edit Minecraft Addon', type: 'mcaddon', url: './folder/files/mcaddons/WorldEdit.mcaddon' },
+            { name: 'Star Wars Minecraft Addon Pack', type: 'mcaddon', url: './folder/files/mcaddons/Star Wars Pack.mcaddon' },
         ];
 
         files.forEach(file => {
@@ -149,7 +148,6 @@
             fileList.appendChild(li);
         });
 
-        // Handle input and select changes
         searchBox.addEventListener('input', () => {
             const searchTerm = searchBox.value.toLowerCase();
             filterFiles(searchTerm, fileTypeSelect.value);
