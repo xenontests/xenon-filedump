@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        /* Add some global styles */
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +23,7 @@
             background-color: #000000;
         }
 
+        /* Style the search container */
         #search-container {
             display: flex;
             align-items: center;
@@ -29,6 +31,7 @@
             width: 500px;
         }
 
+        /* Style the search box */
         #search-box {
             width: 80%;
             height: 48px;
@@ -39,47 +42,56 @@
             outline: none;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease-in-out;
+            background-color: #000000;
+            color: #39ff14;
         }
 
         #search-box:focus {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-      #file-type-select {
-    width: 200px; /* Set a fixed width for the dropdown menu */
-    height: 48px;
-    padding: 12px 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    outline: none;
-    cursor: pointer;
-}
+        /* Style the file type select */
+        #file-type-select {
+            width: 200px; /* Set a fixed width for the dropdown menu */
+            height: 48px;
+            padding: 12px 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            outline: none;
+            cursor: pointer;
+            background-color: #000000;
+            color: #39ff14;
+        }
 
-#file-type-select option {
-    padding: 10px;
-}
+        #file-type-select option {
+            padding: 10px;
+            background-color: #000000;
+            color: #39ff14;
+        }
 
-.download-btn {
-    background-color: #39ff14; 
-    color: black;
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    display: block;
-    margin-top: 1rem;
-    margin-left: 10px;
-    margin-bottom: 20px;
-}
+        /* Style the download button */
+       .download-btn {
+            background-color: #39ff14; 
+            color: black;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            margin-top: 1rem;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
 
-        .download-btn i {
+       .download-btn i {
             margin-left: 10px;
         }
 
-        .download-btn:hover {
+       .download-btn:hover {
             background-color:  #023020;
         }
 
+        /* Style the file list */
         #file-list {
             list-style: none;
             margin-top: 2rem;
@@ -91,7 +103,7 @@
         }
     </style>
 </head>
-<body>
+<body><body>
     <main class="section">
         <div class="container">
             <div class="field has-addons">
